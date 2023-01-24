@@ -2,30 +2,23 @@
 {
   for (int i=0; i<array.Length; i++)
   {
-    Console.Write($"'{array[i]}'");
-    if (i<array.Length-1) Console.Write(", ");
-    else Console.Write("");
+    if (array[i]!=String.Empty)
+    {
+      Console.Write($"'{array[i]}'");
+      if (i<array.Length-1) Console.Write(", ");
+      else Console.Write("");
+    }
   }
   Console.WriteLine("]");
 }
-
-string[] initialArray = {"computer", "science", "123", "3", "million", "A"}; 
+string[] array1 = {"computer", "science", "123", "3", "million", " ", "A"}; 
 Console.Write($"Initial array: [");
-PrintArray(initialArray);
-int newArraySize = 0;
-for (int i=0; i<initialArray.Length; i++)
+PrintArray(array1);
+string[] array2 = new string[array1.Length];
+for (int i=0; i<array1.Length; i++)
 {
-  if (initialArray[i].Length <= 3) newArraySize++;
-}
-string[] newArray = new string [newArraySize];
-newArraySize = 0;
-for (int i=0; i<initialArray.Length; i++)
-{
-  if (initialArray[i].Length <= 3)
-  {
-    newArray[newArraySize] = initialArray[i];
-    newArraySize++;
-  }
+  if (array1[i].Length <= 3) array2[i] = array1[i];
+  else array2[i] = String.Empty;
 }
 Console.Write($"Final array: [");
-PrintArray(newArray);
+PrintArray(array2);
