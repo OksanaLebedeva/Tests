@@ -9,10 +9,10 @@
       else Console.Write("");
     }
   }
-  Console.WriteLine("]");
+  Console.WriteLine();
 }
 string[] array1 = {"computer", "science", "123", "3", "million", " ", "A"}; 
-Console.Write($"Initial array: [");
+Console.Write($"Initial array: ");
 PrintArray(array1);
 string[] array2 = new string[array1.Length];
 for (int i=0; i<array1.Length; i++)
@@ -20,5 +20,5 @@ for (int i=0; i<array1.Length; i++)
   if (array1[i].Length <= 3) array2[i] = array1[i];
   else array2[i] = String.Empty;
 }
-Console.Write($"Final array: [");
+Console.Write($"Final array: ");
 PrintArray(array2);
